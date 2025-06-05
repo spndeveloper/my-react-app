@@ -7,6 +7,7 @@ import Dashboard from "../pages/Dashboard";
 import Login from "../pages/Login";
 import NotFound from "../pages/NotFound";
 import PrivateRoute from "../components/PrivateRoute";
+import AnimeLIstPage from "../pages/AnimeListPage";
 
 const router = createBrowserRouter([
   // Public Routes (tanpa layout)
@@ -20,13 +21,14 @@ const router = createBrowserRouter([
         element: <MainLayout />, // layout hanya untuk halaman login
         children: [
           { path: "/dashboard", element: <Dashboard /> },
-          { path: "/", element: <Home /> },
+          { path: "/home", element: <Home /> },
           { path: "/about", element: <About /> },
           // tambahkan route protected lainnya di sini
         ],
       },
     ],
   },
+  { path: "/", element: <AnimeLIstPage /> },
 
   // Fallback 404
   { path: "*", element: <NotFound /> },
